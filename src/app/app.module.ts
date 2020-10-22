@@ -18,6 +18,13 @@ import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SignUpModule } from './sign-up/sign-up.module';
+import { AdminModule } from './admin/admin.module';
+import { DashboardBeneficiariesModule } from './dashboard-beneficiaries/dashboard-beneficiaries.module';
+import { DepositsModule } from './deposits/deposits.module';
+import { DashboardInvoiceuploadModule } from './dashboard-invoiceupload/dashboard-invoiceupload.module';
+import { DashboardOrdersModule } from './dashboard-orders/dashboard-orders.module';
+import { DashboardCurrentmonthModule } from './dashboard-currentmonth/dashboard-currentmonth.module';
+import { DashboardLastQuarterModule } from './dashboard-last-quarter/dashboard-last-quarter.module';
 
 @NgModule({
   imports: [
@@ -33,7 +40,14 @@ import { SignUpModule } from './sign-up/sign-up.module';
     HomeModule,
     AuthModule,
     LandingPageModule,
+    DashboardBeneficiariesModule,
+    DashboardCurrentmonthModule,
+    DashboardLastQuarterModule,
     SignUpModule,
+    AdminModule,
+    DepositsModule,
+    DashboardOrdersModule,
+    DashboardInvoiceuploadModule,
     Angulartics2Module.forRoot(),
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
