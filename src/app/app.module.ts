@@ -17,7 +17,7 @@ import { LandingPageModule } from './landing-page/landing-page.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
+import { SignUpModule } from './sign-up/sign-up.module';
 
 @NgModule({
   imports: [
@@ -33,10 +33,11 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     HomeModule,
     AuthModule,
     LandingPageModule,
+    SignUpModule,
     Angulartics2Module.forRoot(),
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, SignUpComponent],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
