@@ -1,0 +1,37 @@
+{
+  "generator-ngx-rocket": {
+    "version": "9.1.0",
+    "props": {
+      "location": "path",
+      "strict": false,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "oracle_frontend",
+      "target": [
+        "web"
+      ],
+      "pwa": true,
+      "ui": "bootstrap",
+      "auth": true,
+      "lazy": true,
+      "angulartics": true,
+      "languages": [
+        "en-US"
+      ],
+      "analyticsProvider": "ga",
+      "googleAnalyticsAccount": "x",
+      "tools": [
+        "prettier",
+        "hads"
+      ],
+      "utility": [],
+      "deploy": "firebase",
+      "projectName": "oracle-frontend",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": []
+    }
+  }
+}
