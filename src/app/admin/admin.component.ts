@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chart from 'chart.js';
+import { AdminService } from './admin.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,15 @@ import * as Chart from 'chart.js';
   styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent implements OnInit {
-  constructor() {}
+  constructor(private adminService : AdminService) {
+  }
 
   ngOnInit(): void {
+
+    this.adminService.getAllItems().toPromise().then((success)=>{
+      console.log(success);
+    });
+
     var ctx = document.getElementById('myChart') as HTMLCanvasElement;
     var myChart = new Chart(ctx, {
       type: 'line',

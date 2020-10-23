@@ -52,7 +52,7 @@ import {OrderModule} from './order/order.module';
     Angulartics2Module.forRoot(),
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent,],
+  declarations: [AppComponent],
   providers: [],
   bootstrap: [AppComponent],
 })
