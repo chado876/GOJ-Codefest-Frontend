@@ -7,8 +7,11 @@ import { OrderService } from './order.service';
   templateUrl: './order.component.html',
   styleUrls: ['./order.component.scss']
 })
+
 export class OrderComponent implements OnInit {
   orderForm: FormGroup;
+
+  Categories : string[] = ["Tech","Clothing","Food","Makeup","Other"];
 
   constructor(private formBuilder: FormBuilder, private orderService: OrderService) {
     this.createOrderForm();
@@ -21,6 +24,7 @@ private createOrderForm() {
   this.orderForm = this.formBuilder.group(
     {
       itemLink: ['', [Validators.required]],
+      itemCategory: ['', [Validators.required]]
     }
   );
 
@@ -41,6 +45,12 @@ async submit() {
     .then((success) => {
       console.log(success);
     });
+}
+
+changeCategory(e:any) {
+  this.orderForm.get('category').setValue(e.target.value, {
+    onlySelf: true
+  })
 }
 
 }

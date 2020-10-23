@@ -16,8 +16,7 @@ export class AuthenticationGuard implements CanActivate {
     if (this.credentialsService.isAuthenticated()) {
       return true;
     }
-
-    console.log("AUT GUARD");
+    
     if (this.credentialsService.isAdmin()){
       console.log("yes");
     } else {

@@ -13,6 +13,20 @@
                 placeholder="Item Link"
                 formControlName="itemLink"
               />
+<!-- 
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                 Category
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Tech</a>
+                </div>
+              </div> -->
+
+              <select class="custom-select" (change)="changeCategory($event)" formControlName="itemCategory">
+                <option value="" disabled>Category</option>
+                <option *ngFor="let category of Categories" [ngValue]="category">{{category}}</option>
+             </select>
   
             </div>
           </form>

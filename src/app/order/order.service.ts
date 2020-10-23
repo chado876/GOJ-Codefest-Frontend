@@ -11,6 +11,7 @@ const apiPaths = {
 
 export interface OrderContext {
   itemLink: string;
+  itemCategory: string;
 }
 
 @Injectable({
@@ -30,6 +31,7 @@ export class OrderService {
   orderItem(context: OrderContext) {
     const object = {
       itemLink: context.itemLink,
+      itemCategory: context.itemCategory
     };
     return this.http.post<any>(apiPaths.orderItem(), object, this.httpOptions);
   }
