@@ -10,7 +10,6 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
 import { SignUpComponent } from './sign-up.component';
 // import { NgZorroAntdModule } from 'ng-zorro-antd';
 
-
 @NgModule({
   imports: [
     CommonModule,
@@ -22,7 +21,6 @@ import { SignUpComponent } from './sign-up.component';
     SharedModule,
     SignUpRoutingModule,
     // NgZorroAntdModule,
-
   ],
   declarations: [SignUpComponent],
 })

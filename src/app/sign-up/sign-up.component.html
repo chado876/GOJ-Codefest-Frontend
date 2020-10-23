@@ -2,85 +2,111 @@
   <div class="row">
     <div class="col-sm-8 offset-sm-2">
       <div>
-        <form [formGroup]="signUpForm" novalidate> 
+        <form [formGroup]="signUpForm" novalidate>
           <div class="form-group">
             <label for="fName">First Name</label>
-            <input type="text" name="fName" class="form-control" id="fName" placeholder="First Name" 
-            formControlName="firstName"/>
+            <input
+              type="text"
+              name="fName"
+              class="form-control"
+              id="fName"
+              placeholder="First Name"
+              formControlName="firstName"
+            />
 
             <label for="lName">Last Name</label>
-            <input type="text" name="lName" class="form-control" id="lName" placeholder="Last Name" 
-            formControlName="lastName"/>
+            <input
+              type="text"
+              name="lName"
+              class="form-control"
+              id="lName"
+              placeholder="Last Name"
+              formControlName="lastName"
+            />
 
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="Email Address" 
-            formControlName="email"/>
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              id="email"
+              placeholder="Email Address"
+              formControlName="email"
+            />
 
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Password"
-            formControlName="password" />
+            <input
+              type="password"
+              name="password"
+              class="form-control"
+              id="password"
+              placeholder="Password"
+              formControlName="password"
+            />
 
             <label for="confirmationpassword">Password</label>
-            <input type="password" name="confirmationpassword" class="form-control" id="confirmationpassword" 
-            placeholder="Confirmation Password"
-            formControlName="confirmPassword" />
+            <input
+              type="password"
+              name="confirmationpassword"
+              class="form-control"
+              id="confirmationpassword"
+              placeholder="Confirmation Password"
+              formControlName="confirmPassword"
+            />
 
-            
-          <label
-                  [ngClass]="
-                    signUpForm.controls.password.hasError('required') ||
-                    signUpForm.controls.password.hasError('hasNumber')
-                      ? 'text-danger'
-                      : 'text-success'
-                  "
-                  *ngIf="signUpForm.controls.password.hasError('hasNumber')"
-                >
-                  Password must contain at least one number!
-                </label>
-                <label
-                  [ngClass]="
-                    signUpForm.controls.password.hasError('required') ||
-                    signUpForm.controls.password.hasError('hasCapitalCase')
-                      ? 'text-danger'
-                      : 'text-success'
-                  "
-                  *ngIf="signUpForm.controls.password.hasError('hasCapitalCase')"
-                >
-                  Password must contain at least one uppercase letter!
-                </label>
-                <label
-                  [ngClass]="
-                    signUpForm.controls.password.hasError('required') ||
-                    signUpForm.controls.password.hasError('hasSmallCase')
-                      ? 'text-danger'
-                      : 'text-success'
-                  "
-                  *ngIf="signUpForm.controls.password.hasError('hasSmallCase')"
-                >
-                  Password must contain at least one lowercase letter!
-                </label>
-                <label
-                  [ngClass]="
-                    signUpForm.controls.password.hasError('required') ||
-                    signUpForm.controls.password.hasError('minlength')
-                      ? 'text-danger'
-                      : 'text-success'
-                  "
-                  *ngIf="signUpForm.controls.password.hasError('minlength')"
-                >
-                  Ensure password is at least 8 characters long!
-                </label>
-                <label
-                  [ngClass]="
-                   signUpForm.controls.password.hasError('required') ||
-                    signUpForm.controls.password.hasError('hasSpecialCharacters')
-                      ? 'text-danger'
-                      : 'text-success'
-                  "
-                  *ngIf="signUpForm.controls.password.hasError('hasSpecialCharacters')"
-                >
-                  Password must contain special characters!
-                </label>
+            <label
+              [ngClass]="
+                signUpForm.controls.password.hasError('required') || signUpForm.controls.password.hasError('hasNumber')
+                  ? 'text-danger'
+                  : 'text-success'
+              "
+              *ngIf="signUpForm.controls.password.hasError('hasNumber')"
+            >
+              Password must contain at least one number!
+            </label>
+            <label
+              [ngClass]="
+                signUpForm.controls.password.hasError('required') ||
+                signUpForm.controls.password.hasError('hasCapitalCase')
+                  ? 'text-danger'
+                  : 'text-success'
+              "
+              *ngIf="signUpForm.controls.password.hasError('hasCapitalCase')"
+            >
+              Password must contain at least one uppercase letter!
+            </label>
+            <label
+              [ngClass]="
+                signUpForm.controls.password.hasError('required') ||
+                signUpForm.controls.password.hasError('hasSmallCase')
+                  ? 'text-danger'
+                  : 'text-success'
+              "
+              *ngIf="signUpForm.controls.password.hasError('hasSmallCase')"
+            >
+              Password must contain at least one lowercase letter!
+            </label>
+            <label
+              [ngClass]="
+                signUpForm.controls.password.hasError('required') || signUpForm.controls.password.hasError('minlength')
+                  ? 'text-danger'
+                  : 'text-success'
+              "
+              *ngIf="signUpForm.controls.password.hasError('minlength')"
+            >
+              Ensure password is at least 8 characters long!
+            </label>
+            <label
+              [ngClass]="
+                signUpForm.controls.password.hasError('required') ||
+                signUpForm.controls.password.hasError('hasSpecialCharacters')
+                  ? 'text-danger'
+                  : 'text-success'
+              "
+              *ngIf="signUpForm.controls.password.hasError('hasSpecialCharacters')"
+            >
+              Password must contain special characters!
+            </label>
           </div>
         </form>
         <button class="btn btn-primary" type="button" (click)="submit()">Create Account</button>

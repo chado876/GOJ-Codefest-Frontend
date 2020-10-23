@@ -10,16 +10,16 @@ const apiPaths = {
 };
 
 export interface UserContext {
-    firstName: string;
-    lastName: string;
-    email: string;
-    password: string;
-  }
+  firstName: string;
+  lastName: string;
+  email: string;
+  password: string;
+}
 
-  @Injectable({
-    providedIn: 'root',
-  })
-  export class SignUpService {
+@Injectable({
+  providedIn: 'root',
+})
+export class SignUpService {
   constructor(private http: HttpClient) {}
 
   httpOptions = {
@@ -30,11 +30,11 @@ export interface UserContext {
 
   signUp(context: UserContext) {
     const object = {
-        firstName: context.firstName,
-        lastName: context.lastName,
-        email: context.email,
-        password: context.password
-      };
+      firstName: context.firstName,
+      lastName: context.lastName,
+      email: context.email,
+      password: context.password,
+    };
     return this.http.post<any>(apiPaths.register(), object, this.httpOptions);
   }
 }

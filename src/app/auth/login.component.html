@@ -22,13 +22,13 @@
                 <input
                   type="text"
                   class="form-control"
-                  formControlName="username"
+                  formControlName="email"
                   autocomplete="username"
                   [placeholder]="'Username' | translate"
                 />
                 <span hidden translate>Username</span>
                 <small
-                  [hidden]="loginForm.controls.username.valid || loginForm.controls.username.untouched"
+                  [hidden]="loginForm.controls.email.valid || loginForm.controls.email.untouched"
                   class="text-danger"
                   translate
                 >

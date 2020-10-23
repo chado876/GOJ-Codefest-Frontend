@@ -2,6 +2,7 @@
 
 .navbar {
   margin-bottom: $spacer;
+  z-index:1000;
 }
 
 .nav-link.dropdown-toggle {
