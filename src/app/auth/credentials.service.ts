@@ -2,8 +2,23 @@ import { Injectable } from '@angular/core';
 
 export interface Credentials {
   // Customize received credentials here
-  username: string;
-  token: string;
+  accessToken?: string;
+  refreshToken?: string;
+
+  user?: UserData;
+
+}
+
+export interface UserData {
+  ACCOUNT_BALANCE?: number;
+  BENEFICIARY_ID?: string;
+  CREATE_DTIME?: string;
+  EMAIL?: string;
+  FIRST_NAME?: string;
+  ID?: number;
+  IS_ADMIN?: boolean;
+  LAST_NAME?: string;
+  PASSWORD_HASH?: string;
 }
 
 const credentialsKey = 'credentials';

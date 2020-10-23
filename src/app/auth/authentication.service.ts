@@ -96,4 +96,9 @@ export class AuthenticationService {
     this.credentialsService.setCredentials();
     return of(true);
   }
+
+  getToken(){
+    console.log(this.credentialsService.credentials);
+    return this.credentialsService.credentials.accessToken;
+  }
 }

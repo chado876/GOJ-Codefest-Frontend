@@ -25,7 +25,7 @@ import { DashboardInvoiceuploadModule } from './dashboard-invoiceupload/dashboar
 import { DashboardOrdersModule } from './dashboard-orders/dashboard-orders.module';
 import { DashboardCurrentmonthModule } from './dashboard-currentmonth/dashboard-currentmonth.module';
 import { DashboardLastQuarterModule } from './dashboard-last-quarter/dashboard-last-quarter.module';
-
+import {OrderModule} from './order/order.module';
 @NgModule({
   imports: [
     BrowserModule,
@@ -48,10 +48,11 @@ import { DashboardLastQuarterModule } from './dashboard-last-quarter/dashboard-l
     DepositsModule,
     DashboardOrdersModule,
     DashboardInvoiceuploadModule,
+    OrderModule,
     Angulartics2Module.forRoot(),
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent,],
   providers: [],
   bootstrap: [AppComponent],
 })
