@@ -16,7 +16,7 @@ export interface UserData {
   EMAIL?: string;
   FIRST_NAME?: string;
   ID?: number;
-  IS_ADMIN?: boolean;
+  IS_ADMIN?: string;
   LAST_NAME?: string;
   PASSWORD_HASH?: string;
 }
@@ -46,6 +46,13 @@ export class CredentialsService {
    */
   isAuthenticated(): boolean {
     return !!this.credentials;
+  }
+
+  isAdmin() :boolean{
+    if(this.credentials.user.IS_ADMIN == "t"){
+      console.log(this.credentials);
+      return true;
+    }
   }
 
   /**

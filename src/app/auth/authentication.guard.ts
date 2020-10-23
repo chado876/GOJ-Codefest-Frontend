@@ -17,6 +17,13 @@ export class AuthenticationGuard implements CanActivate {
       return true;
     }
 
+    console.log("AUT GUARD");
+    if (this.credentialsService.isAdmin()){
+      console.log("yes");
+    } else {
+      console.log("no");
+    }
+
     log.debug('Not authenticated, redirecting and adding redirect url...');
     this.router.navigate(['/login'], { queryParams: { redirect: state.url }, replaceUrl: true });
     return false;

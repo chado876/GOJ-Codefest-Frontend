@@ -6,6 +6,7 @@ import { finalize } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { Logger, untilDestroyed } from '@core';
 import { AuthenticationService } from './authentication.service';
+import { CredentialsService } from './credentials.service';
 
 const log = new Logger('Login');
 
@@ -24,7 +25,8 @@ export class LoginComponent implements OnInit, OnDestroy {
     private router: Router,
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private authenticationService: AuthenticationService
+    private authenticationService: AuthenticationService,
+    private crendentialService: CredentialsService
   ) {
     this.createForm();
   }
@@ -75,11 +77,12 @@ export class LoginComponent implements OnInit, OnDestroy {
     if (response.user.EMAIL) {
       this.loginForm.markAsPristine();
       this.isLoading = false;
-      // if (response.userData.type === 'ADMIN') {
-      //   this.router.navigate(['/admin'], { replaceUrl: true });
-      // } else {
+      console.log(response.user.IS_ADMIN);
+      if (response.user.IS_ADMIN === 't') {
+        this.router.navigate(['/admin'], { replaceUrl: true });
+      } else {
         this.router.navigate([this.route.snapshot.queryParams.redirect || '/'], { replaceUrl: true });
-      // }
+      }
     } else {
       console.log(response.user.EMAIL);
       log.debug(`Login error: ${response.error.message}`);
