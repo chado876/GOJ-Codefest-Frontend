@@ -49,7 +49,7 @@ export class CredentialsService {
   }
 
   isAdmin() :boolean{
-    if(this.credentials.user.IS_ADMIN == "t"){
+    if(this.credentials.user.IS_ADMIN === "t"){
       console.log(this.credentials);
       return true;
     }
